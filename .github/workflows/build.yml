@@ -1,7 +1,7 @@
 name: Build Geode Mod
 
 on:
-  workflow_dispatch: # Allows you to manually click "Build" on the website
+  workflow_dispatch: # Allows you to click the manual build button
 
 jobs:
   build:
@@ -22,3 +22,4 @@ jobs:
       uses: geode-sdk/build-geode-mod@main
       with:
         build-config: Release
+        target: Win64  # Forces the cloud runner to use the correct Windows platform setup
