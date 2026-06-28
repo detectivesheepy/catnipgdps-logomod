@@ -1,0 +1,13 @@
+{
+    "geode": "3.0.0-beta.1",
+    "id": "catnipgdps.logo",
+    "version": "1.0.0",
+    "name": "CatnipGDPS Logo",
+    "developer": "catnipgdps",
+    "description": "Adds the CatnipGDPS logo to the game. Optional but reccommended.",
+    "resources": {
+        "sprites": [
+            "my-custom-logo.png"
+        ]
+    }
+}
