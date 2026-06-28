@@ -1,0 +1,24 @@
+name: Build Geode Mod
+
+on:
+  workflow_dispatch: # Allows you to manually click "Build" on the website
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - name: Windows
+          os: windows-latest
+
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Mod
+      uses: geode-sdk/build-geode-mod@main
+      with:
+        build-config: Release
