@@ -9,26 +9,24 @@ class $modify(MyMenuLayer, MenuLayer) {
             return false;
         }
 
-        // 1. Find the original main menu title sprite
-        // In GD 2.2, the title is typically a CCNode named "main-title"
+        // Find the original main menu title sprite
         auto mainTitle = this->getChildByID("main-title");
         
         if (mainTitle) {
-            // Get the position of the old logo so the new one matches perfectly
+            // Match the position coordinates 
             auto position = mainTitle->getPosition();
             
-            // Remove the original logo
+            // Remove the original layout logo
             mainTitle->removeFromParent();
 
-            // 2. Create your custom logo sprite
-            // "my-custom-logo.png" must be included in your mod's resources
+            // Create your replacement custom logo sprite asset
             auto newTitle = CCSprite::create("my-custom-logo.png");
             
             if (newTitle) {
                 newTitle->setPosition(position);
-                newTitle->setID("main-title"); // Keep the ID for compatibility
+                newTitle->setID("main-title"); 
                 
-                // Add the new logo to the menu layer
+                // Mount to the active scene layout
                 this->addChild(newTitle);
             }
         }

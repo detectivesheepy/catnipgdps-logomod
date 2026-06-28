@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "name": "CatnipGDPS Logo",
     "developer": "catnipgdps",
-    "description": "Adds the CatnipGDPS logo to the game. Optional but reccommended.",
+    "description": "Adds the CatnipGDPS logo to the game. Optional but recommended.",
     "resources": {
         "sprites": [
             "my-custom-logo.png"

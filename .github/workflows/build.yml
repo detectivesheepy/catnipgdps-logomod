@@ -1,7 +1,11 @@
 name: Build Geode Mod
 
 on:
-  workflow_dispatch: # Allows you to click the manual build button
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
@@ -18,8 +22,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Set up Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1
+
     - name: Build Mod
       uses: geode-sdk/build-geode-mod@main
       with:
         build-config: Release
-        target: Win64  # Forces the cloud runner to use the correct Windows platform setup
